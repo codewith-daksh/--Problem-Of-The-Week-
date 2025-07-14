@@ -1,93 +1,65 @@
-# -Problem-Of-The-Week-
+# 🚀 Problem Of The Week (POW)
 
+> “Consistency beats intensity. Let your GitHub speak for your growth.”
 
-# 💡 Problem Name: Subarray Sum Equals K
-
-## 🧩 Problem Statement
-Given an integer array `arr[]` and an integer `k`, find the total number of continuous subarrays whose sum equals to `k`.
+Welcome to the **Problem Of The Week** repository — a weekly challenge series designed for BTech CSE Cluster-1 students (2nd Year, Session 2024–25). This repo showcases coding consistency, interview-style problem solving, and real-time optimization across DSA topics.
 
 ---
 
-## 🚀 Approach 1: Brute-Force Using Nested Loops
+## 🗂 Structure
+Weekly/ ├── Week1/ │   ├── Question1/ │   │   ├── Solution.java │   │   ├── README.md │   ├── Question2/ │   └── Question3/ ├── Week2/ │   ├── Question1/ │   └── ...
 
-### 🔍 Logic Overview
-We iterate over every possible subarray using two loops:
-- Outer loop fixes starting index `i`
-- Inner loop adds elements till `j` and calculates cumulative sum
-- If sum equals `k`, increase the counter
 
-### ⏱️ Time Complexity
-- `O(n²)` — checks all subarrays
+## 🎯 Objectives
+- Solve real interview-level problems weekly
+- Transition from "code that works" ➝ "code that scales"
+- Reflect your thought process with clean documentation
 
-### 📦 Space Complexity
-- `O(1)` — no extra data structure used
 
-### ✅ Pros
-- Simple and easy to dry-run
-
-### ❌ Cons
-- Inefficient for large arrays
+Each question folder includes:
+- ✅ Multiple solution files
+- 📄 Clear explanation in `README.md`
+- ⏱️ Time and Space complexity analysis
 
 ---
 
-## ⚡ Approach 2: Optimized Using Prefix Sum + HashMap
-
-### 🔍 Logic Overview
-- Maintain a cumulative `prefix sum` while traversing the array
-- Use a hashmap to store frequency of prefix sums
-- At each index, check if `(prefixSum - k)` exists in map
-  - If yes, add frequency to the result
-- This means: we found a subarray ending at current index whose sum is `k`
-
-### ⏱️ Time Complexity
-- `O(n)` — single pass through array
-
-### 📦 Space Complexity
-- `O(n)` — for hashmap storing prefix sums
-
-### ✅ Pros
-- Efficient and scalable
-- Works with negative numbers too
-
-### ❌ Cons
-- Slightly more complex logic
+## 📌 Weekly Goals
+- Practice efficient coding under interview pressure
+- Build strong fundamentals in DSA and logic
+- Track personal growth via commits and documentation
 
 ---
 
-## 🧪 Sample Test Cases
-
-| Input          | k | Output |
-|----------------|---|--------|
-| `[1,1,1]`       | 2 | `2`    |
-| `[1,2,3]`       | 3 | `2`    |
-| `[3,4,7,-2,2,1,4,2]` | 7 | `4` |
-
----
-
-## 🧠 Edge Cases Handled
-- Subarrays with negative values
-- Multiple overlapping subarrays
-- Zero-length subarrays (via hashmap trick)
-- Prefix sum equal to `k` at start of array
+## 🧠 Topics Covered (Updated Weekly)
+- Arrays & Subarrays
+- Hash Maps & Prefix Sum
+- Two Pointers, Sliding Window
+- Sorting & Searching
+- Recursion & Backtracking *(coming soon)*
 
 ---
 
-## ✍️ Personal Notes
-- Brute-force dry-run helped visualize how subarrays expand
-- Prefix-sum logic taught how to use hashmap for efficient tracking
-- This problem is perfect blend of intuition + optimization
+## 🏆 Evaluation Criteria
+- 🔧 Valid and frequent commits
+- 📘 Clear documentation and README quality
+- 🔁 Multiple solution approaches
+- 🧪 Edge case handling and input testing
 
 ---
 
-## 🗂 Related Topics
-- Arrays, Hash Maps
-- Prefix Sum Patterns
-- Sliding Window (alternative variant)
+## ✍️ Maintained By
+👨‍💻 [codewith-daksh]  
+📅 Session: 2024–25  
+💬 Reach out for collabs, improvements, or debugging discussions!
 
-## 🔄 Update Log
-- `14-07-2025`: Brute-force logic added
-- `14-07-2025`: Optimized prefix sum approach implemented
-- `14-07-2025`: README updated with dual approaches
+---
+
+Feel free to star ⭐ the repo and keep coding consistently. Your logic is your brand.
+
+
+
+
+
 
 
 
