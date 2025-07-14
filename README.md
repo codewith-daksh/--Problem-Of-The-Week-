@@ -1,9 +1,10 @@
 # -Problem-Of-The-Week-
 
+
 # 💡 Problem Name: Subarray Sum Equals K
 
 ## 🧩 Problem Statement
-Given an integer array `arr[]` and a target value `k`, find the total number of continuous subarrays whose sum equals to `k`.
+Given an integer array `arr[]` and an integer `k`, find the total number of continuous subarrays whose sum equals to `k`.
 
 ---
 
@@ -11,70 +12,83 @@ Given an integer array `arr[]` and a target value `k`, find the total number of 
 
 ### 🔍 Logic Overview
 We iterate over every possible subarray using two loops:
-- Outer loop fixes the starting index `i`
-- Inner loop iterates from `i` to the end and computes the cumulative sum `s`
-- If at any point `s == k`, we increment our count `c`
-
-This checks every subarray and directly adds to the answer if it satisfies the condition.
+- Outer loop fixes starting index `i`
+- Inner loop adds elements till `j` and calculates cumulative sum
+- If sum equals `k`, increase the counter
 
 ### ⏱️ Time Complexity
-- Worst Case: `O(n²)` — because we check all subarrays
+- `O(n²)` — checks all subarrays
 
-### 🧮 Space Complexity
-- `O(1)` — No extra space is used
+### 📦 Space Complexity
+- `O(1)` — no extra data structure used
 
-### ✅ Strengths
-- Very intuitive and easy to debug
-- Good for small datasets and dry-run understanding
+### ✅ Pros
+- Simple and easy to dry-run
 
-### ❌ Weaknesses
-- Not efficient for large input sizes (e.g., `n > 10^4`)
-- Recalculates sums for overlapping subarrays
+### ❌ Cons
+- Inefficient for large arrays
+
+---
+
+## ⚡ Approach 2: Optimized Using Prefix Sum + HashMap
+
+### 🔍 Logic Overview
+- Maintain a cumulative `prefix sum` while traversing the array
+- Use a hashmap to store frequency of prefix sums
+- At each index, check if `(prefixSum - k)` exists in map
+  - If yes, add frequency to the result
+- This means: we found a subarray ending at current index whose sum is `k`
+
+### ⏱️ Time Complexity
+- `O(n)` — single pass through array
+
+### 📦 Space Complexity
+- `O(n)` — for hashmap storing prefix sums
+
+### ✅ Pros
+- Efficient and scalable
+- Works with negative numbers too
+
+### ❌ Cons
+- Slightly more complex logic
 
 ---
 
 ## 🧪 Sample Test Cases
 
-| Input               | k | Output |
-|--------------------|---|--------|
-| `[1,1,1]`           | 2 | `2`    |
-| `[1,2,3]`           | 3 | `2`    |
-| `[3,4,7,-2,2,1,4,2]`| 7 | `4`    |
+| Input          | k | Output |
+|----------------|---|--------|
+| `[1,1,1]`       | 2 | `2`    |
+| `[1,2,3]`       | 3 | `2`    |
+| `[3,4,7,-2,2,1,4,2]` | 7 | `4` |
 
 ---
 
 ## 🧠 Edge Cases Handled
-- Array with negative numbers
-- Array with all elements as 0
-- Single element equal to k
-- Multiple overlapping subarrays with sum k
-
----
-
-## 🛠️ Dry-Run Insight
-
-### Example: `[1, 2, 1, 3]`, `k = 3`
-
-- Start at index `0`: subarrays → `[1]`, `[1,2]`, `[1,2,1]`, `[1,2,1,3]`
-- Start at index `1`: subarrays → `[2]`, `[2,1]`, `[2,1,3]`
-- And so on...
-
-Each cumulative sum is checked, and whenever it equals `k`, counter is incremented.
+- Subarrays with negative values
+- Multiple overlapping subarrays
+- Zero-length subarrays (via hashmap trick)
+- Prefix sum equal to `k` at start of array
 
 ---
 
 ## ✍️ Personal Notes
-- This approach helped clarify nested iteration logic
-- While inefficient, it's useful for building debugging confidence
-- Preparing the dry-run manually enhanced understanding of subarray boundaries
+- Brute-force dry-run helped visualize how subarrays expand
+- Prefix-sum logic taught how to use hashmap for efficient tracking
+- This problem is perfect blend of intuition + optimization
 
 ---
 
 ## 🗂 Related Topics
-- Arrays
-- Prefix Sum (for optimized versions)
-- Hash Maps (used in `O(n)` solution)
+- Arrays, Hash Maps
+- Prefix Sum Patterns
+- Sliding Window (alternative variant)
 
 ## 🔄 Update Log
-- `14-07-2025`: Brute-force logic implemented using nested loops
-- `14-07-2025`: README created and test cases added
+- `14-07-2025`: Brute-force logic added
+- `14-07-2025`: Optimized prefix sum approach implemented
+- `14-07-2025`: README updated with dual approaches
+
+
+
+
