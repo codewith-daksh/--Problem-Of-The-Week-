@@ -1,4 +1,4 @@
-# Find Minimum in Array 🧮
+# Problem Name:Find Minimum in Array 
 
  * Brute Force Steps:
   - Assume the first element of the array is the minimum (m = nums[0])
