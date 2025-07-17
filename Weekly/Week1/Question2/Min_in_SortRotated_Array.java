@@ -1,3 +1,5 @@
+//Optimal Approch Using Binary Search
+
 class MinSortArray {
     public int findMin(int[] nums) {
         int low = 0;
