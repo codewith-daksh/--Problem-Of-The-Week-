@@ -1,3 +1,5 @@
+//Brute Force Approach
+
 class MinSortArray {
     public int findMin(int[] nums) {
         int m = nums[0];
