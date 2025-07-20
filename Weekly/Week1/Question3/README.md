@@ -1,4 +1,4 @@
-🏡 Paint House II - README
+#🏡 Paint House II - README
 📘 Problem Statement
 Given n houses and k colors, each house can be painted with one of the k colors. Painting house i with color j costs costs[i][j]. You must paint all houses such that no two adjacent houses have the same color.
 Your task is to minimize the total cost of painting all houses.
